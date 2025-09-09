@@ -1,0 +1,1 @@
+export const EMI_terms=["Loan Amount","Rate of interest(p.a)","Loan tenure"];
