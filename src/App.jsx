@@ -10,14 +10,13 @@ export function App() {
       rateOfInterest: 1,
       loanTenure: 1,
   });
+  console.log(userInputs)
   
-    let p = userInputs.loanAmount;
-    let r = userInputs.rateOfInterest/(12*100);
-    let n = userInputs.loanTenure*12;
-    const emi = Math.trunc( ( p*r*(1+r)**n )/( (1+r)**n - 1 ) );
-    const principalAmount = p;
-    const totalAmount = emi * n;
-    const totalInterest = (emi * n) - p;
+
+    const emi = Math.trunc( ( userInputs.loanAmount*userInputs.rateOfInterest*(1+userInputs.rateOfInterest)**userInputs.loanTenure )/( (1+userInputs.rateOfInterest)**userInputs.loanTenure - 1 ) );
+    const principalAmount = userInputs.loanAmount;
+    const totalAmount = emi * userInputs.loanTenure;
+    const totalInterest = (emi * userInputs.loanTenure) - userInputs.loanAmount;
 
   return (
     <>

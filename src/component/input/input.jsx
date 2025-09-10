@@ -34,7 +34,7 @@ export function Input({loanAmount,rateOfInterest,loanTenure, updatedInputs }) {
           placeholder="Enter Percentage"
           aria-label="Search"
           defaultValue={rateOfInterest}
-          onChange={(event) => { updatedInputs("rateOfInterest",Number(event.target.value))}}
+          onChange={(event) => { updatedInputs("rateOfInterest",Number(event.target.value/(12*100)))}}
         />
       </div>
       <div className="mb-3">
@@ -49,7 +49,7 @@ export function Input({loanAmount,rateOfInterest,loanTenure, updatedInputs }) {
           placeholder="Enter No of Years"
           aria-label="Search"
           defaultValue={loanTenure}
-          onChange={(event) => { updatedInputs("loanTenure",Number(event.target.value))}}
+          onChange={(event) => { updatedInputs("loanTenure",Number(event.target.value*12))}}
         />
       </div>
     </>
